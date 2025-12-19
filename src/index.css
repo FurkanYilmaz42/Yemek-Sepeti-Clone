@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
+
+
+
+@layer components {
+    .container {
+        @apply max-w-[1440px] mx-auto p-5 lg:px-8;
+    }
+
+    .font-sr {
+        font-family: "Sriracha", cursive;
+        font-weight: 400;
+        font-style: normal;
+    }
+}
