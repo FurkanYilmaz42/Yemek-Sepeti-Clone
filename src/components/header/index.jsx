@@ -1,7 +1,11 @@
 import { ShoppingBasket, UtensilsCrossed } from "lucide-react"
+import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 
 const Header = () => {
+const { basket } = useSelector((store) => store.basket);
+const totalAmount =basket.reduce((total,item) => total + item.amount, 0)
+
   return (
     <header className="shadow">
       <div className="container flex justify-between items-center">
@@ -12,7 +16,7 @@ const Header = () => {
           Yakininizda 15 <UtensilsCrossed className="text-red-500"/> <span className="max-md:hidden">restorant var</span></Link>
           <Link to="/cart" className="px-3 py-2 hover:bg-red-100 transition flex items-center rounded-full gap-2">
           <ShoppingBasket />
-          <span>3</span>
+          <span>{totalAmount}</span>
           </Link>
         </div>
       </div>
